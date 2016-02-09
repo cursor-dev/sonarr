@@ -9,7 +9,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN chown -R nobody:users /opt/NzbDrone \
+RUN chown -R media:users /opt/NzbDrone \
   ; mkdir -p /volumes/config /volumes/downloads /volumes/media \
 
 EXPOSE 8989
