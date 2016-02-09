@@ -8,6 +8,8 @@ function handle_signal {
 
 trap "handle_signal" SIGINT SIGTERM SIGHUP
 
+chown -R media:users /volumes/config
+
 echo "starting sonarr"
-mono /opt/NzbDrone/NzbDrone.exe --no-browser -data=/volumes/config & wait
+su - media -c "mono /opt/NzbDrone/NzbDrone.exe --no-browser -data=/volumes/config & wait"
 echo "stopping sonarr"

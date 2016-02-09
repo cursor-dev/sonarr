@@ -25,7 +25,6 @@ ADD sonarr-update.sh /sonarr-update.sh
 RUN chmod 755 /sonarr-update.sh \
   && chown media:users /sonarr-update.sh
 
-USER media
 WORKDIR /opt/NzbDrone
 
 ENTRYPOINT ["/start.sh"]
